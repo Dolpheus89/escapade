@@ -79,7 +79,7 @@ function CityFirstSection({ cityData, showPopup }) {
     const fetchWeather = async () => {
       try {
         const response = await fetch(
-          `http://api.weatherapi.com/v1/current.json?key=0c353eabd4564185b10160058242504&q=${cityData}`
+          `http://api.weatherapi.com/v1/current.json?key=0c353eabd4564185b10160058242504&q=${cityData.name}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
