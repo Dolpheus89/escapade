@@ -6,7 +6,7 @@ import "../styles/CityFirstSection.css";
 import HeartButton from "./HeartButton";
 
 function CityFirstSection({ cityData, showPopup }) {
-  const [weather, setWeather] = useState("toulouse");
+  const [weather, setWeather] = useState(cityData.name);
   const [isLoading, setIsLoading] = useState(true);
   const container = useRef();
 
@@ -79,7 +79,7 @@ function CityFirstSection({ cityData, showPopup }) {
     const fetchWeather = async () => {
       try {
         const response = await fetch(
-          `http://api.weatherapi.com/v1/current.json?key=0c353eabd4564185b10160058242504&q=toulouse`
+          `http://api.weatherapi.com/v1/current.json?key=0c353eabd4564185b10160058242504&q=${cityData}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
