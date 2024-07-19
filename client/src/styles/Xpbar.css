@@ -1,0 +1,11 @@
+.xp-bar-container {
+  height: 20px;
+  width: 250px;
+  background-color: "#e0e0de";
+  border-radius: 50px;
+  display: flex;
+}
+.percentage-barxp {
+  color: white;
+  margin-top: 5px;
+}

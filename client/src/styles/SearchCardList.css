@@ -1,0 +1,10 @@
+.search-list {
+  width: 80%;
+  margin-inline: auto;
+  margin-block: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}

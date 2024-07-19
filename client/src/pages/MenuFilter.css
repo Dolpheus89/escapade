@@ -1,0 +1,172 @@
+/* MenuFilter.css */
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 2;
+}
+
+.menu__image {
+  width: 50%;
+  height: 100%;
+  background: url("../assets/images/pexels-photo-5773238.jpg") no-repeat center
+    center;
+  background-size: cover;
+}
+
+.menu-filter__container {
+  flex: 1;
+  background-color: white;
+  position: relative;
+}
+
+.menu-logo__image {
+  width: 184px;
+  height: 182px;
+  margin: 20px auto 0 auto;
+}
+
+.menu-reception__escape {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.menu-filter__title,
+.menu-filter__subtitle {
+  background: none;
+  border: none;
+  cursor: default;
+  font-family: var(--ff-header-sans-serif);
+  position: absolute;
+}
+
+.menu-filter__title {
+  top: 52%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 76.8px;
+  color: var(--clr-neutral-black-1);
+}
+
+.menu-filter__subtitle {
+  top: 60%;
+  left: 17.5%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 76.8px;
+  color: var(--clr-neutral-black-1);
+}
+
+.menu-filter__buttons {
+  position: fixed;
+  top: 65%;
+  left: 76.5%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.menu-filter__button {
+  color: var(--clr-accent-blue);
+  font-weight: 600;
+  background: var(--clr-neutral-white-1);
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-filter__button:hover {
+  background: var(--clr-accent-lightblue);
+}
+
+.menu-filter__description {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--ff-header-sans-serif);
+  position: absolute;
+  top: 75%;
+  left: 19.5%;
+  transform: translate(-50%, -50%);
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 115.2px;
+  color: var(--clr-neutral-black-1);
+}
+
+.menu-user__icon-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  padding: 0;
+}
+
+.menu-user__icon {
+  width: 32px;
+  height: 32px;
+  color: var(--clr-neutral-black-1);
+  padding: 2px;
+}
+
+.loupe {
+  width: 50px;
+  height: 50px;
+  z-index: 5; /* Assurez-vous que .loupe est au-dessus de .loupe__image */
+}
+
+.loupe__image {
+  position: fixed;
+  top: 75%; /* Ajuster cette valeur pour déplacer vers le bas */
+  left: 68%; /* Ajuster cette valeur pour déplacer à gauche ou à droite */
+  transform: translate(-50%, -50%); /* Centrer l'élément */
+  width: 80px;
+  height: 80px;
+  border-radius: 35px;
+  background: var(--clr-neutral-white-1);
+  display: flex; /* Utiliser flexbox pour centrer */
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loupe__image.expanded {
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.loupe__input {
+  position: fixed;
+  top: 75%; /* Ajuster cette valeur pour déplacer vers le bas */
+  left: 70%; /* Ajuster cette valeur pour déplacer à gauche ou à droite */
+  transform: translate(-50%, -50%); /* Centrer l'élément */
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background: var(--clr-neutral-white-1);
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+}

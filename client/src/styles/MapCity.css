@@ -1,0 +1,20 @@
+.city-map-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 3rem;
+  margin-left: 3rem;
+}
+.map-image {
+  width: 80vw;
+  height: 50vh;
+  cursor: grab;
+  border-radius: 30px;
+}
+
+.city-main-info-section__title {
+  font-size: var(--size-48px);
+  font-family: var(--ff-header-sans-serif);
+}

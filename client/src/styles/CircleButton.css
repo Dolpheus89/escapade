@@ -1,0 +1,44 @@
+.circle {
+  display: inline-block;
+  color: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 120%,
+    #81e8f6,
+    #76deef 10%,
+    #055194 80%,
+    #062745 100%
+  );
+  cursor: pointer;
+  border: none;
+}
+.circle:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 0px,
+    #ffffff,
+    rgba(255, 255, 255, 0) 58%
+  );
+  filter: blur(5px);
+  z-index: 2;
+}
+
+.unselected {
+  background: white;
+  border-radius: 50%;
+  border: 0.5px solid #1c21295e;
+}
+
+.container-circle {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}

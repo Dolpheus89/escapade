@@ -1,0 +1,205 @@
+/* HomePage.css */
+.home-page {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  object-fit: cover;
+  transition: background-image 1s ease-in-out;
+}
+
+.home-page__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire area */
+  z-index: -1; /* Places the video behind other elements */
+}
+
+.home-page__text-container {
+  margin-top: -100px;
+  margin-right: 200px;
+  text-align: center;
+  color: var(--clr-neutral-white-075);
+  margin-bottom: 20px;
+}
+
+.home-page__title {
+  font-weight: 400;
+  font-size: var(--size-64px);
+  font-family: var(--ff-header-sans-serif);
+  margin: 0;
+  line-height: 2;
+  letter-spacing: 0.1em;
+}
+
+.home-page__subtitle {
+  font-weight: 400;
+  font-size: var(--size-96px);
+  font-family: var(--ff-header-sans-serif);
+  color: var(--clr-neutral-white-1);
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+.home-page__description {
+  font-weight: 400;
+  font-size: var(--size-36px);
+  font-family: var(--ff-body-main);
+  margin-bottom: 1.5em;
+  letter-spacing: -0.01em;
+  line-height: 43.2px;
+}
+
+.home-page__buttons-container {
+  margin-right: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-page__button-register,
+.home-page__button-login {
+  background-color: var(--clr-neutral-white-1);
+  color: var(--clr-accent-blue);
+  border-radius: 100px;
+  padding: 10px 50px;
+
+  cursor: pointer;
+  border: none;
+}
+
+.home-page__button-login {
+  font-weight: 400;
+  background-color: transparent;
+  font-size: var(--size-32px);
+  font-family: var(--ff-body-main);
+  color: var(--clr-neutral-white-050);
+  letter-spacing: 0.12em;
+  border: none;
+  padding: 0;
+}
+.home-page__branch {
+  position: absolute;
+  top: -14px;
+  left: -82px;
+  width: 566px;
+  height: 253px;
+}
+
+.home-page__tree {
+  position: absolute;
+  top: 55%;
+  left: 85%;
+  width: 871px;
+  height: 1024px;
+}
+
+.home-page__button-register {
+  font-size: var(--size-36px);
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  font-family: var(--ff-header-sans-serif);
+}
+
+.home-page__checkbox {
+  display: none;
+}
+
+.home-page__burger-label {
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.home-page__burger-icon {
+  width: 50px; /* Ajustez la taille selon vos besoins */
+  height: 50px; /* Assurez-vous que la hauteur est également définie */
+  object-fit: cover;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s,
+    visibility 0s 0.5s;
+  z-index: 1;
+}
+
+.overlay-close {
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  right: 95%; /* Utiliser un pourcentage pour une position relative */
+  top: 20px;
+  background: url("https://tympanus.net/Development/FullscreenOverlayStyles/img/cross.png")
+    no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.overlay nav {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  height: 60%;
+  font-size: 54px;
+  transform: translateY(-50%);
+}
+
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+.overlay ul li {
+  display: block;
+  height: 20%;
+  height: calc(100% / 5);
+  min-height: 54px;
+}
+
+.overlay ul li a {
+  font-weight: 300;
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: "NotCourierSans";
+  text-transform: uppercase;
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+  color: #849368;
+}
+
+#op:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+}

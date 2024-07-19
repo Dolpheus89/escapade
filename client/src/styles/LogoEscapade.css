@@ -1,0 +1,16 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+
+  .logo__image {
+    width: 50px;
+    height: auto;
+  }
+
+  .logo__title {
+    font-family: var(--ff-header-serif);
+    font-size: var(--size-36px);
+  }
+}

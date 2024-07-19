@@ -1,0 +1,20 @@
+.heart-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: gray;
+  z-index: 3;
+  pointer-events: auto;
+}
+.city-main-first-section .heart-icon {
+  top: unset;
+  right: unset;
+}
+
+.heart-icon.favorite {
+  color: red;
+}

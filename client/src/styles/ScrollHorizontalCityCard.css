@@ -1,0 +1,39 @@
+#scrollhorizontal {
+  display: flex;
+  overflow-x: hidden;
+
+  .content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+
+    .composantbis {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 1 columns */
+      grid-template-rows: repeat(2, 1fr); /* 2 rows */
+      gap: 30px; /* Gap between grid items */
+      padding: 20px;
+    }
+
+    .composant {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr); /* 4 columns */
+      grid-template-rows: repeat(2, 1fr); /* 2 rows */
+      gap: 30px; /* Gap between grid items */
+      padding: 20px;
+    }
+  }
+}
+.map {
+  aspect-ratio: 1/1;
+  display: flex;
+  height: 75%;
+  width: auto;
+  margin-left: 20rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}

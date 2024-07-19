@@ -1,0 +1,6 @@
+#live2d-widget {
+  position: fixed;
+  left: 30px;
+  bottom: 0px;
+  z-index: 1;
+}

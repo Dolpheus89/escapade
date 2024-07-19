@@ -1,0 +1,85 @@
+.user-card-list-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 5;
+
+  .user-card-list-button-container__cta {
+    background-color: white;
+    border-radius: 50px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-family: var(--ff-header-sans-serif);
+    color: var(--clr-accent-blue);
+    font-size: var(--size-16px);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .--pen {
+    padding: 1rem;
+  }
+
+  .--text {
+    padding: 0.2em 1.5em;
+  }
+}
+
+.user-card-list {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.personalization-container {
+  flex: 1;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.user-card-list-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 90%;
+  min-height: 50vh;
+  margin: 0 1rem;
+
+  .close-user-note {
+    background: none;
+    border: none;
+    font-size: 2.3rem;
+    position: absolute;
+    top: 0.05rem;
+    right: 0.3rem;
+    cursor: pointer;
+  }
+
+  .edit-user-note-simple {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    cursor: pointer;
+  }
+
+  .edit-user-note-perso {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0.8rem;
+    left: 5rem;
+    cursor: pointer;
+  }
+}

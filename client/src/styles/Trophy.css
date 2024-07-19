@@ -1,0 +1,112 @@
+:root {
+  --d: 1000ms;
+  --angle: 70deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgb(168, 184, 255);
+  --c2: rgba(168, 239, 255, 0.1);
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: "<percentage>";
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
+}
+.trophy-popup {
+  max-width: 250px;
+  height: 300px;
+  right: -350px;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  visibility: hidden;
+  border-radius: 20px;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+  border: 0.5rem solid grey;
+  border-image: conic-gradient(
+      from var(--angle),
+      var(--c2),
+      var(--c1) 0.1turn,
+      var(--c1) 0.15turn,
+      var(--c2) 0.25turn
+    )
+    30;
+  animation: borderRotate var(--d) linear infinite forwards;
+
+  .background-trophy {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    z-index: 2;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+
+    .p {
+      color: blueviolet;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    font-family: var(--ff-header-serif);
+    font-size: var(--size-32px);
+  }
+}
+
+.trophy-popup:nth-child(2) {
+  border-image: radial-gradient(
+      ellipse at var(--gradX) var(--gradY),
+      var(--c1),
+      var(--c1) 10%,
+      var(--c2) 40%
+    )
+    30;
+  animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
+  }
+}
+
+@keyframes borderRadial {
+  20% {
+    --gradX: 100%;
+    --gradY: 50%;
+  }
+  40% {
+    --gradX: 100%;
+    --gradY: 100%;
+  }
+  60% {
+    --gradX: 50%;
+    --gradY: 100%;
+  }
+  80% {
+    --gradX: 0%;
+    --gradY: 50%;
+  }
+  100% {
+    --gradX: 50%;
+    --gradY: 0%;
+  }
+}
+.trophy-popup.show {
+  visibility: visible;
+  display: block;
+}

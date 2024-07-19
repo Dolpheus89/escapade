@@ -1,0 +1,19 @@
+body {
+  overflow: visible !important ;
+}
+.city-main > * {
+  margin-bottom: 10vh;
+  padding-bottom: 200px;
+}
+.city-diaporama-popup {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+.city-diaporama-popup.show {
+  display: flex;
+}

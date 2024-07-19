@@ -1,0 +1,22 @@
+.home-page__city-card-container {
+  display: flex;
+  justify-content: space-between;
+
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20vh;
+
+  & > * {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .home-page__city-card-middle {
+    transform: translateY(-5rem);
+  }
+
+  .home-page__city-card-right {
+    transform: translateY(5rem);
+  }
+}

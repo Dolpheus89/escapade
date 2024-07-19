@@ -1,0 +1,42 @@
+:root {
+  /* Font Family */
+  /* Shortchut : ff- */
+  --ff-header-sans-serif: "Bebas Neue", sans-serif;
+  --ff-header-serif: "Playfair Display", serif;
+  --ff-body-main: "Lato", sans-serif;
+
+  /* Colors */
+  /* Neutral = black and white */
+  /* Opacity id noted from 0 (transparent) to 1 (opaque) */
+  --clr-neutral-white-1: hsl(0, 0%, 94%);
+  --clr-neutral-white-075: hsla(0, 0%, 94%, 0.75);
+  --clr-neutral-white-050: hsla(0, 0%, 94%, 0.5);
+
+  --clr-neutral-black-1: hsl(0, 0%, 17%);
+  --clr-neutral-black-075: hsl(0, 0%, 17%, 0.75);
+  --clr-neutral-black-050: hsl(0, 0%, 17%, 0.5);
+
+  --clr-accent-blue: hsl(226, 68%, 40%);
+  --clr-accent-lightblue: hsl(212, 100%, 92%);
+  --clr-accent-lightgreen: hsl(129, 51%, 93%);
+
+  /* Sizes */
+  /* These are the main sizes used throughout the document */
+  --size-96px: 6rem;
+  --size-64px: 4rem;
+  --size-48px: 3rem;
+  --size-36px: 2.25rem;
+  --size-32px: 2rem;
+  --size-20px: 1.25rem;
+  --size-16px: 1rem;
+}
+
+/* These are all custom variables that must be used throughout the document */
+
+body {
+  /* Added cascading styles */
+  /* Used default color throughout document + Lato police */
+  background-color: var(--clr-neutral-white-050);
+  color: var(--clr-neutral-black-1);
+  font-family: var(--ff-body-main);
+}
