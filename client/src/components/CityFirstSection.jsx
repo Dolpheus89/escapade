@@ -6,7 +6,7 @@ import "../styles/CityFirstSection.css";
 import HeartButton from "./HeartButton";
 
 function CityFirstSection({ cityData, showPopup }) {
-  const [weather, setWeather] = useState(cityData.name);
+  const [weather, setWeather] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const container = useRef();
 
@@ -79,7 +79,7 @@ function CityFirstSection({ cityData, showPopup }) {
     const fetchWeather = async () => {
       try {
         const response = await fetch(
-          `http://api.weatherapi.com/v1/current.json?key=0c353eabd4564185b10160058242504&q=${cityData.name}`
+          `http://api.weatherapi.com/v1/current.json?key=0c353eabd4564185b10160058242504&q=toulouse`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -102,23 +102,25 @@ function CityFirstSection({ cityData, showPopup }) {
         <h1 className="city-main-first-section__title gsap-text-1">
           {cityData.name}
         </h1>
-        <h2 className="city-main-first-section__subtitle  gsap-text-1">
+        <h2 className="city-main-first-section__subtitle gsap-text-1">
           {cityData.region}
         </h2>
-        <div className="city-main-first-section__weather-info  gsap-text-2">
+        <div className="city-main-first-section__weather-info gsap-text-2">
           {isLoading ? (
             <p>loading...</p>
           ) : (
-            <span
-              className="city-main-first-section__weather-info-container
-            "
-            >
-              <span>{weather.current.temp_c}°C</span>
-              <img src={weather.current.condition.icon} alt="meteo icon" />
-            </span>
+            weather && weather.current && (
+              <span className="city-main-first-section__weather-info-container">
+                <span>{weather.current.temp_c}°C</span>
+                <img
+                  src={weather.current.condition.icon}
+                  alt="meteo icon"
+                />
+              </span>
+            )
           )}
         </div>
-        <p className="city-main-first-section__description  gsap-text-3">
+        <p className="city-main-first-section__description gsap-text-3">
           {cityData.description}
         </p>
         <div>
@@ -149,8 +151,14 @@ function CityFirstSection({ cityData, showPopup }) {
     </section>
   );
 }
+
 CityFirstSection.propTypes = {
-  cityData: PropTypes.string.isRequired,
+  cityData: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    region: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    img: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
   showPopup: PropTypes.func.isRequired,
 };
 
